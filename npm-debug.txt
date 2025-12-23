@@ -1,0 +1,490 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from dockerfile
+#1 transferring dockerfile: 582B done
+#1 DONE 0.0s
+
+#2 [auth] library/node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:18-alpine
+#3 DONE 0.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 110B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#5 resolve docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e 0.0s done
+#5 DONE 0.0s
+
+#6 [2/6] WORKDIR /app
+#6 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 1.90kB 0.0s done
+#7 DONE 0.0s
+
+#8 [3/6] COPY package.json package-lock.json* ./
+#8 DONE 0.0s
+
+#9 [4/6] RUN npm ci --verbose || (echo "npm ci FAILED" && exit 1)
+#9 0.137 npm verbose cli /usr/local/bin/node /usr/local/bin/npm
+#9 0.137 npm info using npm@10.8.2
+#9 0.137 npm info using node@v18.20.8
+#9 0.139 npm verbose title npm ci
+#9 0.139 npm verbose argv "ci" "--loglevel" "verbose"
+#9 0.140 npm verbose logfile logs-max:10 dir:/root/.npm/_logs/2025-12-22T22_27_09_235Z-
+#9 0.140 npm verbose logfile /root/.npm/_logs/2025-12-22T22_27_09_235Z-debug-0.log
+#9 0.359 npm warn EBADENGINE Unsupported engine {
+#9 0.359 npm warn EBADENGINE   package: 'next@16.1.0',
+#9 0.359 npm warn EBADENGINE   required: { node: '>=20.9.0' },
+#9 0.359 npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+#9 0.359 npm warn EBADENGINE }
+#9 0.405 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-wasm32-wasi
+#9 0.423 npm verbose reify failed optional dependency /app/node_modules/lightningcss-win32-x64-msvc
+#9 0.423 npm verbose reify failed optional dependency /app/node_modules/lightningcss-win32-arm64-msvc
+#9 0.424 npm verbose reify failed optional dependency /app/node_modules/lightningcss-linux-x64-musl
+#9 0.424 npm verbose reify failed optional dependency /app/node_modules/lightningcss-linux-x64-gnu
+#9 0.424 npm verbose reify failed optional dependency /app/node_modules/lightningcss-linux-arm-gnueabihf
+#9 0.424 npm verbose reify failed optional dependency /app/node_modules/lightningcss-freebsd-x64
+#9 0.425 npm verbose reify failed optional dependency /app/node_modules/lightningcss-darwin-x64
+#9 0.425 npm verbose reify failed optional dependency /app/node_modules/lightningcss-darwin-arm64
+#9 0.425 npm verbose reify failed optional dependency /app/node_modules/lightningcss-android-arm64
+#9 0.433 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-win32-x64-msvc
+#9 0.433 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-win32-ia32-msvc
+#9 0.433 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-win32-arm64-msvc
+#9 0.433 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-wasm32-wasi
+#9 0.433 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-x64-musl
+#9 0.433 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-x64-gnu
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-s390x-gnu
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-riscv64-musl
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-riscv64-gnu
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-ppc64-gnu
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-arm-musleabihf
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-linux-arm-gnueabihf
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-freebsd-x64
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-darwin-x64
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-darwin-arm64
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-android-arm64
+#9 0.434 npm verbose reify failed optional dependency /app/node_modules/@unrs/resolver-binding-android-arm-eabi
+#9 0.435 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-win32-x64-msvc
+#9 0.435 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-win32-arm64-msvc
+#9 0.435 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-linux-x64-musl
+#9 0.435 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-linux-x64-gnu
+#9 0.436 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+#9 0.436 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-freebsd-x64
+#9 0.436 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-darwin-x64
+#9 0.436 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-darwin-arm64
+#9 0.436 npm verbose reify failed optional dependency /app/node_modules/@tailwindcss/oxide-android-arm64
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@next/swc-win32-x64-msvc
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@next/swc-win32-arm64-msvc
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@next/swc-linux-x64-musl
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@next/swc-linux-x64-gnu
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@next/swc-darwin-x64
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@next/swc-darwin-arm64
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-win32-x64
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-win32-ia32
+#9 0.437 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-win32-arm64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-wasm32
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-linuxmusl-x64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-linux-x64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-linux-s390x
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-linux-riscv64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-linux-ppc64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-linux-arm
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-linuxmusl-x64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-linux-x64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-linux-s390x
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-linux-riscv64
+#9 0.438 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-linux-ppc64
+#9 0.439 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-linux-arm
+#9 0.439 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-darwin-x64
+#9 0.439 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-libvips-darwin-arm64
+#9 0.439 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-darwin-x64
+#9 0.439 npm verbose reify failed optional dependency /app/node_modules/@img/sharp-darwin-arm64
+#9 0.650 npm http fetch GET https://registry.npmjs.org/npm attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.747 npm http fetch GET https://registry.npmjs.org/unrs-resolver/-/unrs-resolver-1.11.1.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.749 npm http fetch GET https://registry.npmjs.org/zod/-/zod-4.2.1.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.750 npm http fetch GET https://registry.npmjs.org/zod-validation-error/-/zod-validation-error-4.0.2.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.755 npm http fetch GET https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.757 npm http fetch GET https://registry.npmjs.org/which-collection/-/which-collection-1.0.2.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.757 npm http fetch GET https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.758 npm http fetch GET https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.19.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.760 npm http fetch GET https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.5.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.761 npm http fetch GET https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.766 npm http fetch GET https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.1.1.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.773 npm http fetch GET https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.2.1.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.782 npm http fetch GET https://registry.npmjs.org/which/-/which-2.0.2.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.785 npm http fetch GET https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz attempt 1 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 0.817 npm verbose audit error FetchError: request to https://registry.npmjs.org/-/npm/v1/security/audits/quick failed, reason: unable to get local issuer certificate
+#9 0.817 npm verbose audit error     at ClientRequest.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/minipass-fetch/lib/index.js:130:14)
+#9 0.817 npm verbose audit error     at ClientRequest.emit (node:events:517:28)
+#9 0.817 npm verbose audit error     at _destroy (node:_http_client:882:13)
+#9 0.817 npm verbose audit error     at onSocketNT (node:_http_client:902:5)
+#9 0.817 npm verbose audit error     at process.processTicksAndRejections (node:internal/process/task_queues:83:21) {
+#9 0.817 npm verbose audit error   code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY',
+#9 0.817 npm verbose audit error   errno: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY',
+#9 0.817 npm verbose audit error   type: 'system'
+#9 0.817 npm verbose audit error }
+#9 10.81 npm http fetch GET https://registry.npmjs.org/npm attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.89 npm http fetch GET https://registry.npmjs.org/zod/-/zod-4.2.1.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.89 npm http fetch GET https://registry.npmjs.org/unrs-resolver/-/unrs-resolver-1.11.1.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.90 npm http fetch GET https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.2.1.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.91 npm http fetch GET https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.91 npm http fetch GET https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.1.1.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.91 npm http fetch GET https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.91 npm http fetch GET https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.91 npm http fetch GET https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.19.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.91 npm http fetch GET https://registry.npmjs.org/which-collection/-/which-collection-1.0.2.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.92 npm http fetch GET https://registry.npmjs.org/zod-validation-error/-/zod-validation-error-4.0.2.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.92 npm http fetch GET https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.5.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.92 npm http fetch GET https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 10.92 npm http fetch GET https://registry.npmjs.org/which/-/which-2.0.2.tgz attempt 2 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.04 npm http fetch GET https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.04 npm http fetch GET https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.04 npm http fetch GET https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.2.1.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.04 npm http fetch GET https://registry.npmjs.org/npm attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.04 npm http fetch GET https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.1.1.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.05 npm http fetch GET https://registry.npmjs.org/unrs-resolver/-/unrs-resolver-1.11.1.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.06 npm http fetch GET https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.19.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.06 npm http fetch GET https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.07 npm http fetch GET https://registry.npmjs.org/zod/-/zod-4.2.1.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.07 npm http fetch GET https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.5.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.07 npm http fetch GET https://registry.npmjs.org/zod-validation-error/-/zod-validation-error-4.0.2.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.07 npm http fetch GET https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.07 npm http fetch GET https://registry.npmjs.org/which-collection/-/which-collection-1.0.2.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.08 npm http fetch GET https://registry.npmjs.org/which/-/which-2.0.2.tgz attempt 3 failed with UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+#9 71.08 npm verbose cwd /app
+#9 71.08 npm verbose os Linux 6.10.14-linuxkit
+#9 71.08 npm verbose node v18.20.8
+#9 71.08 npm verbose npm  v10.8.2
+#9 71.08 npm error Exit handler never called!
+#9 71.08 npm error This is an error with npm itself. Please report this error at:
+#9 71.08 npm error   <https://github.com/npm/cli/issues>
+#9 71.08 npm verbose exit 0
+#9 71.08 npm info ok
+#9 71.08 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-12-22T22_27_09_235Z-debug-0.log
+#9 DONE 71.1s
+
+#10 [5/6] RUN echo "=== Contents of node_modules ===" &&     ls -la node_modules/ &&     echo "=== Size of node_modules ===" &&     du -sh node_modules/ &&     echo "=== Check for next specifically ===" &&     (test -d node_modules/next && echo "✓ next package found" || echo "✗ next package NOT found")
+#10 0.106 === Contents of node_modules ===
+#10 0.108 total 1204
+#10 0.108 drwxr-xr-x  299 root     root         12288 Dec 22 22:27 .
+#10 0.108 drwxr-xr-x    1 root     root          4096 Dec 22 22:27 ..
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 @alloc
+#10 0.108 drwxr-xr-x   18 root     root          4096 Dec 22 22:27 @babel
+#10 0.108 drwxr-xr-x    5 root     root          4096 Dec 22 22:27 @emnapi
+#10 0.108 drwxr-xr-x    9 root     root          4096 Dec 22 22:27 @eslint
+#10 0.108 drwxr-xr-x    4 root     root          4096 Dec 22 22:27 @eslint-community
+#10 0.108 drwxr-xr-x    4 root     root          4096 Dec 22 22:27 @humanfs
+#10 0.108 drwxr-xr-x    4 root     root          4096 Dec 22 22:27 @humanwhocodes
+#10 0.108 drwxr-xr-x   27 root     root          4096 Dec 22 22:27 @img
+#10 0.108 drwxr-xr-x    7 root     root          4096 Dec 22 22:27 @jridgewell
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 @napi-rs
+#10 0.108 drwxr-xr-x   12 root     root          4096 Dec 22 22:27 @next
+#10 0.108 drwxr-xr-x    5 root     root          4096 Dec 22 22:27 @nodelib
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 @nolyfill
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 @rtsao
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 @swc
+#10 0.108 drwxr-xr-x   17 root     root          4096 Dec 22 22:27 @tailwindcss
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 @tybys
+#10 0.108 drwxr-xr-x    8 root     root          4096 Dec 22 22:27 @types
+#10 0.108 drwxr-xr-x   12 root     root          4096 Dec 22 22:27 @typescript-eslint
+#10 0.108 drwxr-xr-x   21 root     root          4096 Dec 22 22:27 @unrs
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 acorn
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 acorn-jsx
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 ajv
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 ansi-styles
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 argparse
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 aria-query
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 array-buffer-byte-length
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 array-includes
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 array.prototype.findlast
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 array.prototype.findlastindex
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 array.prototype.flat
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 array.prototype.flatmap
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 array.prototype.tosorted
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 arraybuffer.prototype.slice
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 ast-types-flow
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 async-function
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 available-typed-arrays
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 axe-core
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 axobject-query
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 balanced-match
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 baseline-browser-mapping
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 brace-expansion
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 braces
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 browserslist
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 call-bind
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 call-bind-apply-helpers
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 call-bound
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 callsites
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 caniuse-lite
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 chalk
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 client-only
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 color-convert
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 color-name
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 concat-map
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 convert-source-map
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 cross-spawn
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 csstype
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 damerau-levenshtein
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 data-view-buffer
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 data-view-byte-length
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 data-view-byte-offset
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 debug
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 deep-is
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 define-data-property
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 define-properties
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 detect-libc
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 doctrine
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 dunder-proto
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 electron-to-chromium
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 emoji-regex
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 enhanced-resolve
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-abstract
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-define-property
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-errors
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-iterator-helpers
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-object-atoms
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-set-tostringtag
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-shim-unscopables
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 es-to-primitive
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 escalade
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 escape-string-regexp
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 eslint
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 eslint-config-next
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 eslint-import-resolver-node
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 eslint-import-resolver-typescript
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 eslint-module-utils
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 eslint-plugin-import
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 eslint-plugin-jsx-a11y
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 eslint-plugin-react
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 eslint-plugin-react-hooks
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 eslint-scope
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 eslint-visitor-keys
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 espree
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 esquery
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 esrecurse
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 estraverse
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 esutils
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 fast-deep-equal
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 fast-glob
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 fast-json-stable-stringify
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 fast-levenshtein
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 fastq
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 file-entry-cache
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 fill-range
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 find-up
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 flat-cache
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 flatted
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 for-each
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 function-bind
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 function.prototype.name
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 functions-have-names
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 generator-function
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 gensync
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 get-intrinsic
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 get-proto
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 get-symbol-description
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 get-tsconfig
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 glob-parent
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 globals
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 globalthis
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 gopd
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 graceful-fs
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 has-bigints
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 has-flag
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 has-property-descriptors
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 has-proto
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 has-symbols
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 has-tostringtag
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 hasown
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 hermes-estree
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 hermes-parser
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 ignore
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 import-fresh
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 imurmurhash
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 internal-slot
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-array-buffer
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-async-function
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-bigint
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-boolean-object
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 is-bun-module
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-callable
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-core-module
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-data-view
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-date-object
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-extglob
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-finalizationregistry
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-generator-function
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-glob
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-map
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-negative-zero
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-number
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-number-object
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-regex
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-set
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-shared-array-buffer
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-string
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-symbol
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-typed-array
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-weakmap
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-weakref
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 is-weakset
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 isarray
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 isexe
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 iterator.prototype
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 jiti
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 js-tokens
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 js-yaml
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 jsesc
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 json-buffer
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 json-schema-traverse
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 json-stable-stringify-without-jsonify
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 json5
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 jsx-ast-utils
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 keyv
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 language-subtag-registry
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 language-tags
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 levn
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-android-arm64
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-darwin-arm64
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-darwin-x64
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-freebsd-x64
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-linux-arm-gnueabihf
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-linux-arm64-gnu
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-linux-arm64-musl
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-linux-x64-gnu
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-linux-x64-musl
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-win32-arm64-msvc
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lightningcss-win32-x64-msvc
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 locate-path
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lodash.merge
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 loose-envify
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 lru-cache
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 magic-string
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 math-intrinsics
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 merge2
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 micromatch
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 minimatch
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 minimist
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 ms
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 nanoid
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 napi-postinstall
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 natural-compare
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 next
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 node-releases
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object-assign
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object-inspect
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object-keys
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object.assign
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object.entries
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object.fromentries
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object.groupby
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 object.values
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 optionator
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 own-keys
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 p-limit
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 p-locate
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 parent-module
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 path-exists
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 path-key
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 path-parse
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 picocolors
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 picomatch
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 possible-typed-array-names
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 postcss
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 prelude-ls
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 prop-types
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 punycode
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 queue-microtask
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 react
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 react-dom
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 react-is
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 reflect.getprototypeof
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 regexp.prototype.flags
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 resolve
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 resolve-from
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 resolve-pkg-maps
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 reusify
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 run-parallel
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 safe-array-concat
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 safe-push-apply
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 safe-regex-test
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 scheduler
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 semver
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 set-function-length
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 set-function-name
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 set-proto
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 sharp
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 shebang-command
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 shebang-regex
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 side-channel
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 side-channel-list
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 side-channel-map
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 side-channel-weakmap
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 source-map-js
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 stable-hash
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 stop-iteration-iterator
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 string.prototype.includes
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 string.prototype.matchall
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 string.prototype.repeat
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 string.prototype.trim
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 string.prototype.trimend
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 string.prototype.trimstart
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 strip-bom
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 strip-json-comments
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 styled-jsx
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 supports-color
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 supports-preserve-symlinks-flag
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 tailwindcss
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 tapable
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 tinyglobby
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 to-regex-range
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 ts-api-utils
+#10 0.108 drwxr-xr-x    3 root     root          4096 Dec 22 22:27 tsconfig-paths
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 tslib
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 type-check
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 typed-array-buffer
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 typed-array-byte-length
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 typed-array-byte-offset
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 typed-array-length
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 typescript
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 typescript-eslint
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 unbox-primitive
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 undici-types
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 unrs-resolver
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 update-browserslist-db
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 uri-js
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 which
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 which-boxed-primitive
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 which-builtin-type
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 which-collection
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 which-typed-array
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 word-wrap
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 yallist
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 yocto-queue
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 zod
+#10 0.108 drwxr-xr-x    2 root     root          4096 Dec 22 22:27 zod-validation-error
+#10 0.108 === Size of node_modules ===
+#10 0.112 1.8M	node_modules/
+#10 0.112 === Check for next specifically ===
+#10 0.112 ✓ next package found
+#10 DONE 0.1s
+
+#11 [6/6] COPY . .
+#11 DONE 0.1s
+
+#12 exporting to image
+#12 exporting layers 0.0s done
+#12 exporting manifest sha256:5ff14418b66f51b0007649f9bf3b7f3c0bacdd67f86c870667f32f9d999934b8
+#12 exporting manifest sha256:5ff14418b66f51b0007649f9bf3b7f3c0bacdd67f86c870667f32f9d999934b8 done
+#12 exporting config sha256:e687355a90847997148dbc222afa8de340931a06e3f186a9e2cad16493fd519b done
+#12 exporting attestation manifest sha256:f8eba44777b289a0286f8b082443be21e6e921aefca81a83961f2acdff00ff8d done
+#12 exporting manifest list sha256:45f9c8982d63c89f46e29b2bc847280c0addf1e9aec8fb8b86aac20bd3c2ba72 done
+#12 naming to docker.io/library/test-builder:latest done
+#12 unpacking to docker.io/library/test-builder:latest 0.1s done
+#12 DONE 0.1s

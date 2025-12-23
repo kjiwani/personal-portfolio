@@ -1,0 +1,41 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from dockerfile
+#1 transferring dockerfile: 1.24kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:18-alpine
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:18-alpine
+#2 DONE 1.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 110B done
+#4 DONE 0.0s
+
+#5 [base 1/1] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#5 resolve docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e done
+#5 DONE 0.0s
+
+#6 [runner 1/3] WORKDIR /app
+#6 CACHED
+
+#7 [runner 2/3] RUN addgroup --system --gid 1001 nodejs
+#7 DONE 0.1s
+
+#8 [runner 3/3] RUN adduser --system --uid 1001 nextjs
+#8 DONE 0.1s
+
+#9 exporting to image
+#9 exporting layers 0.1s done
+#9 exporting manifest sha256:90b4f324a90fb9afd112618feeac974e0e0beff1a4058abf6ff2ea65bbf34be0 done
+#9 exporting config sha256:0b14f762fb501e09e2b28255fc2c13f8fe35e97d2f22824f23e1eaf7e6397518 done
+#9 exporting attestation manifest sha256:9cd7c2d17384a0414277a8be42766402ba975b166868024ecd45a9559b87aa92 done
+#9 exporting manifest list sha256:dc6bd1492f4202def163b9e9446b980d88b9d7941faabdab817ef8e7443cbeab done
+#9 naming to docker.io/library/personal-portfolio:latest done
+#9 unpacking to docker.io/library/personal-portfolio:latest 0.0s done
+#9 DONE 0.1s
