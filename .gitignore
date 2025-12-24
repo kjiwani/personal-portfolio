@@ -43,3 +43,35 @@ next-env.d.ts
 #claude-context
 project-handoff.md
 aws-setup/
+
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfvars
+terraform/.terraformrc
+terraform/crash.log
+
+# AWS and sensitive files
+*.pem
+*.key
+.aws/
+.env
+.env.local
+.env*.local
+
+# Project handoff document (contains internal notes)
+PROJECT-HANDOFF.md
+
+# ECS task definitions and policies (may contain account IDs)
+ecs-task-trust-policy.json
+task-definition.json
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
