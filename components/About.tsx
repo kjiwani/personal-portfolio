@@ -46,7 +46,7 @@ export function About() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 With over 7 years of experience in product management, I've led cross-functional teams to launch
                 innovative products that have reached millions of users. My approach combines data-driven
-                decision making with a deep empathy for user needs.
+                decision making with a deep empathy for user needs. A lot of experience in Volunteer work
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 I specialize in B2B SaaS and platform products, having worked with companies like New Relic, 
