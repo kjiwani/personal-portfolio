@@ -1,77 +1,50 @@
-import { Target, Users, TrendingUp, Award } from 'lucide-react';
+import {Target, Users, TrendingUp, Award} from 'lucide-react';
 
 export function About() {
-  const highlights = [
-    {
-      icon: Target,
-      title: 'Strategic Vision',
-      description: 'Translating business goals into actionable product roadmaps',
-    },
-    {
-      icon: Users,
-      title: 'User-Centric',
-      description: 'Deeply understanding user needs through research and data',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Growth Focused',
-      description: 'Driving metrics that matter and delivering measurable impact',
-    },
-    {
-      icon: Award,
-      title: 'Cross-Functional',
-      description: 'Leading diverse teams to ship exceptional products',
-    },
-  ];
-
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image Side */}
-          <div className="order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1666723043169-22e29545675c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2UlMjBkZXNrfGVufDF8fHx8MTc2NjUxNDIwMXww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Professional workspace"
-                className="w-full h-[500px] object-cover"
-              />
-            </div>
-          </div>
+    <section id="about" className="py-20 px-4 bg-white">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">About Me</h2>
+        
+        <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+          <p>
+            I'm a Technical Product Manager who bridges engineering and business strategy, specializing in <strong>platform and infrastructure products</strong> that enable teams to move faster.
+          </p>
 
-          {/* Content Side */}
-          <div className="order-1 lg:order-2 space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">About Me</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                With over 7 years of experience in product management, I've led cross-functional teams to launch
-                innovative products that have reached millions of users. My approach combines data-driven
-                decision making with a deep empathy for user needs. A lot of experience in Volunteer work
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                I specialize in B2B SaaS and platform products, having worked with companies like New Relic, 
-                PDI Technologies, and Toyota Connected to define product strategy, prioritize features, and 
-                deliver solutions that drive both user satisfaction and business growth.
-              </p>
-            </div>
+          <p>
+            Currently at Toyota Connected, I lead cloud engineering initiatives for 12+ development teams, building internal operations platforms that reduce deployment friction and accelerate innovation cycles.
+          </p>
 
-            {/* Highlights Grid */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
-                    <highlight.icon size={24} className="text-gray-900" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{highlight.title}</h3>
-                    <p className="text-gray-600">{highlight.description}</p>
-                  </div>
-                </div>
-              ))}
+          <p>
+            My approach combines hands-on technical experience with strategic product thinking. I've written <strong>Python automation scripts</strong>, designed <strong>RESTful APIs</strong>, managed <strong>Kafka streams</strong>, and scaled real-time systems—while driving million dollar cost optimization initiatives and leading cross-functional teams.
+          </p>
+
+          <p>
+            I believe the best product managers <strong>deeply understand their technology stack</strong>, which enables them to make better prioritization decisions, communicate effectively with engineering teams, and identify opportunities that others miss.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mt-12 pt-8 border-t border-gray-200">
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-teal-600">Technical Depth</h3>
+              <ul className="space-y-2 text-base">
+                <li>✓ Infrastructure automation & scaling</li>
+                <li>✓ API design & integration architecture</li>
+                <li>✓ Cross-team technical coordination</li>
+                <li>✓ Hands-on scripting & automation</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-amber-600">Business Impact</h3>
+              <ul className="space-y-2 text-base">
+                <li>✓ $1.2M+ in annual cost savings</li>
+                <li>✓ 3 weeks → 10 hours deployment time</li>
+                <li>✓ 10K+ users scaled in production</li>
+                <li>✓ C-level stakeholder management</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

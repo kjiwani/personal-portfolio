@@ -1,69 +1,63 @@
-import { TrendingUp } from 'lucide-react';
-
-export interface ProjectCardProps {
-  title: string;
-  company: string;
-  category: string;
-  description: string;
-  image: string;
-  impact: string[];
-  tags: string[];
+interface ProjectCardProps {
+  title: string
+  company: string
+  year: string
+  description: string
+  impact: string[]
+  technologies: string[]
+  category: string
 }
 
-export function ProjectCard({ title, company, category, description, image, impact, tags }: ProjectCardProps) {
+export function ProjectCard({ 
+  title, 
+  company, 
+  year, 
+  description, 
+  impact, 
+  technologies,
+  category 
+}: ProjectCardProps) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-      {/* Project Image */}
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute top-4 right-4">
-          <span className="px-3 py-1 bg-white/95 backdrop-blur-sm rounded-full text-sm font-medium text-gray-900 shadow-sm">
+    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-8 border border-gray-100">
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <span className="inline-block px-3 py-1 text-sm font-medium text-teal-700 bg-teal-50 rounded-full mb-3">
             {category}
           </span>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
+          <p className="text-gray-600 font-medium">{company} • {year}</p>
         </div>
       </div>
 
-      {/* Project Content */}
-      <div className="p-6 space-y-4 flex-1 flex flex-col">
-        <div className="space-y-1">
-          <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-          <p className="text-sm text-gray-500">{company}</p>
-        </div>
-        
-        <p className="text-gray-600">{description}</p>
+      <p className="text-gray-700 mb-6 leading-relaxed">
+        {description}
+      </p>
 
-        {/* Impact Metrics */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-gray-900 font-medium">
-            <TrendingUp size={16} />
-            <span>Key Impact</span>
-          </div>
-          <ul className="space-y-1">
-            {impact.map((item, i) => (
-              <li key={i} className="text-gray-600 flex items-start gap-2">
-                <span className="text-green-600 mt-0.5">✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="mb-6">
+        <h4 className="font-semibold text-gray-800 mb-3">Key Impact:</h4>
+        <ul className="space-y-2">
+          {impact.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 text-gray-700">
+              <span className="text-teal-600 mt-1">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        {/* Tags - pushed to bottom */}
-        <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100 mt-auto">
-          {tags.map((tag, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 border border-gray-200 text-gray-700 rounded-full text-sm hover:border-gray-300 transition-colors"
+      <div>
+        <h4 className="font-semibold text-gray-800 mb-3">Technologies:</h4>
+        <div className="flex flex-wrap gap-2">
+          {technologies.map((tech, index) => (
+            <span 
+              key={index}
+              className="px-3 py-1 text-sm border border-gray-300 text-gray-700 rounded-full hover:border-teal-600 hover:text-teal-600 transition-colors"
             >
-              {tag}
+              {tech}
             </span>
           ))}
         </div>
       </div>
     </div>
-  );
+  )
 }

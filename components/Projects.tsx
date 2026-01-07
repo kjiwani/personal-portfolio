@@ -1,68 +1,64 @@
-import { ProjectCard, ProjectCardProps } from './ProjectCard';
+import { ProjectCard } from './ProjectCard'
 
 export function Projects() {
-  const projects: ProjectCardProps[] = [
+  const projects = [
     {
-      title: 'Multi-Tenant Fuel Loyalty Platform',
-      company: 'PDI Technologies / DropTank',
-      category: 'B2B SaaS',
-      description:
-        'Successfully launched a multi-tenant Loyalty engine for 2 major US regions composed of 7 sites managing introductory offers, user-specific offers, and a fully rearchitected platform.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      title: "Internal Developer Platform",
+      company: "Toyota Connected",
+      year: "2025",
+      description: "Building self-service infrastructure platform enabling business teams to deploy prototypes without DevOps bottlenecks. Creating automated deployment pipelines with Argo CD integration and standardized templates across multiple technology stacks.",
       impact: [
-        '10,000+ new users onboarded',
-        '5 offer campaigns deployed',
-        'Integrated POS systems & mobile app',
+        "Accelerating innovation velocity for C-level demos to Toyota Japan",
+        "Supporting 25+ engineering teams across 4 product verticals",
+        "Reducing prototype-to-demo time from weeks to hours"
       ],
-      tags: ['Oracle Cloud', 'Kafka', 'React', 'Java', 'POS Integration'],
+      technologies: ["GitLab", "Argo CD", "Kubernetes", "Python", "Node.js"],
+      category: "Platform Engineering"
     },
     {
-      title: 'Infrastructure Build Time Optimization',
-      company: 'New Relic',
-      category: 'Platform',
-      description:
-        'Infrastructure build times for cellular architecture were impeding the ability to respond quickly to traffic. Led initiative to parallelize build steps and align teams to reduce time in each step.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      title: "Cellular Infrastructure Optimization",
+      company: "New Relic",
+      year: "2023-2024",
+      description: "Led cross-team initiative to automate infrastructure provisioning for New Relic's cellular architecture. Replaced manual, sequential processes with parallelized, self-healing deployment system across 9 different cell types for telemetry ingestion (MELT).",
       impact: [
-        'Build time: 3 days → 9 hours',
-        '$300K+ annual cost savings',
-        'Improved incident response capability',
+        "Reduced provisioning time from 3 weeks to 10 hours",
+        "$1.2M in annual cost savings",
+        "Eliminated infrastructure dual-run periods during cell rotations"
       ],
-      tags: ['AWS', 'CI/CD', 'GitLab', 'Observability'],
+      technologies: ["Workflow Automation", "Infrastructure Parallelization", "AWS", "GCP"],
+      category: "Infrastructure"
     },
     {
-      title: 'Rapid Prototyping Infrastructure Platform',
-      company: 'Toyota Connected',
-      category: 'Platform',
-      description:
-        'Spearheading a platform to accelerate proof-of-concept development, enabling engineering teams to quickly validate ideas and demonstrate value to C-suite stakeholders.',
-      image: 'https://images.unsplash.com/photo-1600697395780-1cf7ab1fef5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      title: "Real-Time Loyalty Platform",
+      company: "PDI Technologies",
+      year: "2021-2023",
+      description: "Built loyalty engine backend integrating with point-of-sale systems, payment platforms (Verafone, Gilbarco), and mobile applications for Fortune 500 client. Designed RESTful APIs and automated point management systems using Python scripting.",
       impact: [
-        'POC development accelerated',
-        'C-suite buy-in achieved',
-        'Cross-team adoption in progress',
+        "Scaled from 8K pilot to 10K+ production users across multiple markets",
+        "Real-time transaction processing with Kafka streams",
+        "Personalized offers based on customer behavior analytics"
       ],
-      tags: ['Kubernetes', 'Docker', 'ArgoCD', 'Terraform'],
-    },
-  ];
+      technologies: ["RESTful APIs", "Kafka", "Python", "XML Integration", "AWS"],
+      category: "Platform Development"
+    }
+  ]
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Featured Projects</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A selection of projects where I've driven product strategy, led cross-functional teams, and delivered
-            measurable impact.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="projects" className="py-20 px-4 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold mb-4 text-center text-gray-800">
+          Featured Projects
+        </h2>
+        <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Technical product initiatives delivering measurable business impact through platform engineering and infrastructure optimization
+        </p>
+        
+        <div className="grid md:grid-cols-1 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
