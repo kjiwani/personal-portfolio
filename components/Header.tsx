@@ -3,18 +3,37 @@
 import { useState, useEffect } from 'react';
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      // Keep existing scroll detection
+      setScrolled(window.scrollY > 50);
+
+      // NEW: Track active section
+      const sections = ['hero', 'projects', 'about', 'skills', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -22,9 +41,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-white'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-white'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 border-b border-gray-100">
@@ -38,30 +56,46 @@ export function Header() {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+            <a
+              href="#projects"
+              className={`text-gray-700 hover:text-orange-500 transition-colors relative ${activeSection === 'projects' ? 'text-teal-600 font-semibold' : ''
+                }`}
             >
               Projects
-            </button>
-            <button
-              onClick={() => scrollToSection('skills')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              {activeSection === 'projects' && (
+                <span className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-teal-500"></span>
+              )}
+            </a>
+            <a
+              href="#about"
+              className={`text-gray-700 hover:text-orange-500 transition-colors relative ${activeSection === 'about' ? 'text-teal-600 font-semibold' : ''
+                }`}
+            >
+              About
+              {activeSection === 'about' && (
+                <span className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-teal-500"></span>
+              )}
+            </a>
+            <a
+              href="#skills"
+              className={`text-gray-700 hover:text-orange-500 transition-colors relative ${activeSection === 'skills' ? 'text-teal-600 font-semibold' : ''
+                }`}
             >
               Skills
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="px-5 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              {activeSection === 'skills' && (
+                <span className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-teal-500"></span>
+              )}
+            </a>
+            <a
+              href="#contact"
+              className={`text-gray-700 hover:text-orange-500 transition-colors relative ${activeSection === 'contact' ? 'text-teal-600 font-semibold' : ''
+                }`}
             >
               Contact
-            </button>
+              {activeSection === 'contact' && (
+                <span className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-teal-500"></span>
+              )}
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}

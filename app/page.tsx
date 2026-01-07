@@ -4,6 +4,7 @@ import { About } from '@/components/About';
 import { Projects } from '@/components/Projects';
 import { Skills } from '@/components/Skills';
 import { Contact } from '@/components/Contact';
+import { Currently } from '@/components/Currently';
 
 export default function Home() {
   return (
@@ -11,12 +12,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
         <Projects />
+        <About />
         <Skills />
         <Contact />
       </main>
-      
+
       {/* Footer */}
       <footer className="py-8 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
