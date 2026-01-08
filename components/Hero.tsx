@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center pt-20 pb-0 px-4 bg-white">
+    <section id="hero" className="min-h-screen flex items-center justify-center pt-20 pb-0">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Simple gradient ring around headshot */}
         <div className="relative w-48 h-48 mx-auto mb-8">
@@ -18,20 +18,20 @@ export function Hero() {
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-teal-600 to-amber-600 bg-clip-text text-transparent">
+        <h1 className="text-6xl md:text-7xl font-bold mb-4 text-gray-900 tracking-tight">
           Khurram Jiwani
         </h1>
 
-        <p className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">
+        <p className="text-3xl md:text-4xl text-gray-900 mb-3 font-semibold">
           Technical Product Manager
         </p>
 
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed text-center max-w-3xl">
+        <h2 className="text-2xl md:text-3xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
           The kind of PM who gets technical enough to be dangerous—I learn systems
           deeply, architect solutions with engineers, and bridge the gap between
           technical complexity and customer needs. <span className="font-semibold text-gray-900">
             Real impact: $1.2M saved, 3 weeks → 10 hours.</span>
-        </p>
+        </h2>
 
         {/* Current Role Badge */}
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-teal-50 border border-teal-200 rounded-full mb-8">
@@ -43,6 +43,10 @@ export function Hero() {
             Currently enabling 15+ teams at Toyota Connected
           </span>
         </div>
+
+        <p className="text-lg md:text-xl text-gray-600 mb-6 text-center">
+          8+ years leading infrastructure products • AWS • Kubernetes • APIs
+        </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8 text-center justify-center">

@@ -7,37 +7,37 @@ export function Header() {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 50);
-    
-    const sections = ['hero', 'projects', 'about', 'skills', 'contact'];
-    const scrollPosition = window.scrollY + 200;
-    
-    // Check if we're near the bottom of the page
-    const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
-    
-    // If near bottom, set to last section (contact)
-    if (nearBottom) {
-      setActiveSection('contact');
-      return;
-    }
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
 
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element) {
-        const { offsetTop, offsetHeight } = element;
-        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-          setActiveSection(section);
-          break;
+      const sections = ['hero', 'projects', 'about', 'skills', 'contact'];
+      const scrollPosition = window.scrollY + 200;
+
+      // Check if we're near the bottom of the page
+      const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+
+      // If near bottom, set to last section (contact)
+      if (nearBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
         }
       }
-    }
-  };
+    };
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
