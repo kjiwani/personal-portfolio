@@ -5,7 +5,8 @@ import { ProjectCard } from './ProjectCard';
 import { ProjectCardCondensed } from './ProjectCardCondensed';
 
 export function Projects() {
-  const [showOtherProjects, setShowOtherProjects] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const featuredProjects = [
     {
       title: "Infrastructure Build Time Optimization",
@@ -98,108 +99,139 @@ export function Projects() {
     }
   ];
 
+  const totalSlides = 2; // Slide 0: Featured, Slide 1: Other
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <section id="projects" className="py-28 bg-white">
+    <section id="projects" className="py-16 bg-white">
       <div className="container mx-auto px-6">
         
-        {/* Featured Projects Section */}
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4 text-gray-900">
-            Featured Projects
+            {currentSlide === 0 ? 'Featured Projects' : 'Other Notable Projects'}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Technical product initiatives delivering measurable business impact through 
-            platform engineering and infrastructure optimization
+            {currentSlide === 0 
+              ? 'Technical product initiatives delivering measurable business impact through platform engineering and infrastructure optimization'
+              : 'Additional initiatives demonstrating breadth of experience across platform engineering, cost optimization, and enterprise systems'
+            }
           </p>
         </div>
-        
-        {/* Featured Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {featuredProjects.map((project, idx) => (
-            <ProjectCard key={idx} {...project} />
-          ))}
-        </div>
 
-        {/* Other Notable Projects Section - Collapsible */}
-        <div className="mt-16">
+        {/* Carousel Container */}
+        <div className="relative">
           
-          {/* Subtle Toggle Link */}
-          <div className="flex items-center justify-center mb-8">
-            <button
-              onClick={() => setShowOtherProjects(!showOtherProjects)}
-              className="group flex items-center gap-2 text-gray-600 hover:text-teal-600 
-                       transition-colors duration-300"
+          {/* Slides */}
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              <span className="text-lg font-semibold">
-                {showOtherProjects ? 'Hide' : 'View'} Other Notable Projects ({otherProjects.length})
-              </span>
               
-              {/* Small Chevron Icon */}
-              <svg 
-                className={`w-5 h-5 transition-transform duration-300 ${
-                  showOtherProjects ? 'rotate-180' : ''
-                }`}
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M19 9l-7 7-7-7" 
-                />
-              </svg>
-            </button>
-          </div>
-          
-          {/* Collapsible Content */}
-          <div 
-            className={`overflow-hidden transition-all duration-500 ${
-              showOtherProjects ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
-            }`}
-          >
-            <div className="border-t-2 border-gray-200 pt-12">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-3 text-gray-900">
-                  Other Notable Projects
-                </h3>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Additional initiatives demonstrating breadth of experience across 
-                  platform engineering, cost optimization, and enterprise systems
-                </p>
+              {/* Slide 1: Featured Projects */}
+              <div className="w-full flex-shrink-0">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {featuredProjects.map((project, idx) => (
+                    <ProjectCard key={idx} {...project} />
+                  ))}
+                </div>
               </div>
-              
-              {/* Condensed Projects Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {otherProjects.map((project, idx) => (
-                  <ProjectCardCondensed key={idx} {...project} />
-                ))}
+
+              {/* Slide 2: Other Projects */}
+              <div className="w-full flex-shrink-0">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+                  {otherProjects.map((project, idx) => (
+                    <ProjectCardCondensed key={idx} {...project} />
+                  ))}
+                </div>
               </div>
+
             </div>
           </div>
-        </div>
-        
-        {/* Divider before About section */}
-        <div className="mt-16"></div>
 
-        {/* Optional CTA */}
-        {/* <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-4 text-lg">
-            Want to discuss how I can help solve your infrastructure and platform challenges?
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white 
-                     rounded-lg hover:bg-teal-700 transition-colors font-semibold"
-          >
-            Let's Connect
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-        </div> */}
+          {/* Navigation Arrows - Simple and Subtle */}
+          {currentSlide === 0 && (
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={nextSlide}
+                className="group flex items-center gap-3 px-6 py-3 text-gray-600 
+                         hover:text-teal-600 transition-all duration-300 
+                         border-2 border-gray-300 hover:border-teal-500 rounded-lg"
+                aria-label="View more projects"
+              >
+                <span className="text-sm font-semibold">More Projects</span>
+                <svg 
+                  className="w-5 h-5 group-hover:translate-x-1 transition-transform" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                  />
+                </svg>
+              </button>
+            </div>
+          )}
+
+          {currentSlide === 1 && (
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={prevSlide}
+                className="group flex items-center gap-3 px-6 py-3 text-gray-600 
+                         hover:text-teal-600 transition-all duration-300 
+                         border-2 border-gray-300 hover:border-teal-500 rounded-lg"
+                aria-label="Back to featured projects"
+              >
+                <svg 
+                  className="w-5 h-5 group-hover:-translate-x-1 transition-transform" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M11 17l-5-5m0 0l5-5m-5 5h12" 
+                  />
+                </svg>
+                <span className="text-sm font-semibold">Back to Featured</span>
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Dot Indicators */}
+        <div className="flex justify-center items-center gap-3 mt-12">
+          {[...Array(totalSlides)].map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`transition-all duration-300 rounded-full ${
+                currentSlide === index
+                  ? 'w-12 h-3 bg-gradient-to-r from-teal-600 to-orange-600'
+                  : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

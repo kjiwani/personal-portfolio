@@ -44,5 +44,11 @@ a {
 
 /* Better spacing for sections */
 section {
-  scroll-margin-top: 80px; /* Accounts for fixed header when jumping to sections */
+  scroll-margin-top: 20px; /* Accounts for fixed header when jumping to sections */
+}
+
+/* Smooth scrolling with proper offset for fixed header */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px; /* Adjust based on your header height */
 }

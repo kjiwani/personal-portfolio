@@ -3,7 +3,7 @@
 export function About() {
   return (
     <section id="about" className="bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto py-6 px-6">
         <div className="max-w-4xl mx-auto">
           
           {/* Section Header */}

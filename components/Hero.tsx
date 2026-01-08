@@ -18,19 +18,18 @@ export function Hero() {
           </div>
         </div>
 
-        <h1 className="text-6xl md:text-7xl font-bold mb-4 text-gray-900 tracking-tight">
+        <h1 className="text-4xl md:text-7xl font-bold mb-4 text-gray-900 tracking-tight">
           Khurram Jiwani
         </h1>
 
-        <p className="text-3xl md:text-4xl text-gray-900 mb-3 font-semibold">
+        {/* <p className="text-3xl md:text-4xl text-gray-900 mb-3 font-semibold">
           Technical Product Manager
-        </p>
+        </p> */}
 
         <h2 className="text-2xl md:text-3xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-          The kind of PM who gets technical enough to be dangerous—I learn systems
-          deeply, architect solutions with engineers, and bridge the gap between
-          technical complexity and customer needs. <span className="font-semibold text-gray-900">
-            Real impact: $1.2M saved, 3 weeks → 10 hours.</span>
+          I'm the PM engineers actually want in architecture reviews. I've deployed to production, debugged Kubernetes clusters, and designed REST APIs, not to replace engineers, 
+          but to make better product decisions. That technical depth lets me bridge complexity and strategy in ways most PMs can't.
+          <span className="font-semibold text-gray-900"> Real impact: $1.2M saved, 3 weeks → 10 hours.</span>
         </h2>
 
         {/* Current Role Badge */}

@@ -12,9 +12,29 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <div className="py-8">
+          <div className="container mx-auto px-6">
+            <div className="border-t border-gray-200"></div>
+          </div>
+        </div>
         <Projects />
+        <div className="py-8">
+          <div className="container mx-auto px-6">
+            <div className="border-t border-gray-200"></div>
+          </div>
+        </div>
         <About />
+        <div className="py-8">
+          <div className="container mx-auto px-6">
+            <div className="border-t border-gray-200"></div>
+          </div>
+        </div>
         <Skills />
+        <div className="py-8">
+          <div className="container mx-auto px-6">
+            <div className="border-t border-gray-200"></div>
+          </div>
+        </div>
         <Contact />
       </main>
 
